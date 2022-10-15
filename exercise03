@@ -1,0 +1,24 @@
+import static java.lang.Math.*;
+class Demo
+{
+    public static void main(String args[])
+    {
+        final double g=9.8;
+        double alpha=30;
+        double m=0.1;
+        double gamma=0.1;
+        double V=100.0;
+        double t=1.0;
+        double x,y;
+        alpha/=180/PI;
+        x=V*m*cos(alpha)/gamma*(1-exp(-gamma*t/m));
+        y=m*(V*sin(alpha)*gamma+m*g)/gamma/gamma*(1-exp(-gamma*t/m))-m*g*t/gamma;
+        System.out.println("Кординати на тялото за t="+t+" с:\nx="+x+"м\ny="+y+"м");
+        System.out.println("Параметри: ");
+        System.out.println("Ъгъл alpha="+alpha/PI*180+"градуса");
+        System.out.println("Скорост V="+V+"м/с");
+        System.out.println("Коефициент на съпротивление gamma="+gamma+"H*с/м");
+        System.out.println("Маса на тялото="+m+"кг");
+
+    }
+}
