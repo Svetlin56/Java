@@ -1,0 +1,18 @@
+class Demo
+{
+    public static void main(String args[])
+    {
+        double S1=100;
+        double S2=200;
+        double V1=80;
+        double V=48;
+        
+        double V2,T,t;
+        T=(S1+S2)/V;
+        t=S1/V1;
+        V2=T>t?(S1+S2)/(T-t):-1;
+        
+        System.out.println("Скоростта по втория участък: ");
+        System.out.println(V2<0?"Това е невъзможно!":V2+"км/ч");
+    }   
+}
