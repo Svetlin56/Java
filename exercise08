@@ -1,0 +1,25 @@
+import static java.lang.Math.*;
+class Demo
+{
+    public static void main(String[] args)
+    {
+        double a=5;
+        double b=3;
+        double c=2;
+        double alpha;
+        boolean state;
+
+        alpha=asin(a/sqrt(a*a+b*b));
+
+        state=a*a+b*b>=c*c;
+
+        System.out.println("Уравнение a*cos(x) +b*sin(x)=c");
+        System.out.println("Параметри: ");
+        System.out.println("a="+a);
+        System.out.println("b="+b);
+        System.out.println("c="+c);
+        System.out.print("Решение за x: ");
+        System.out.println(state?asin(c/sqrt(a*a+b*b))-alpha:"няма решение!");
+
+    }
+}
