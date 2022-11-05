@@ -1,0 +1,25 @@
+class Demo
+{
+    public static void main(String[] args)
+    {
+        double R1=3,R2=5,R3=7,R=1;
+        double r1,r2,r3;
+        boolean A,B;
+
+        r1=R2*R3/(R2+R3)+R1*R/(R1+R);
+        r2=R1*R3/(R1+R3)+R2*R/(R2+R);
+        r3=R2*R1/(R2+R1)+R3*R/(R3+R);
+
+        A=(r1<=r2)&&(r1<=r3);
+        B=(r2<=r1)&&(r2<=r3);
+
+        System.out.println("Стойности на съпротивление на резисторите: ");
+        System.out.println("Първи R1="+R1+" Ом");
+        System.out.println("Втори R2="+R2+" Ом");
+        System.out.println("Трети R3="+R3+" Ом");
+        System.out.println("Основен R="+R3+" Ом");
+        System.out.print("Във втория блок се свързва");
+        System.out.print(A?" първият":B?" вторият":" третият");
+        System.out.println(" резистор!");
+    }
+}
