@@ -1,0 +1,19 @@
+class Demo
+{
+    public static void main(String[] args)
+    {
+        int num;
+        char A='A', B='Ъ';
+        char X,Y;
+
+        num=((int)B<<16)+((int)A);
+        System.out.println("Изходни букви: \'"+A+"\' и \'"+B+"\'.");
+        System.out.println("Кодово число: "+num);
+
+        Y=(char) (num>>>16);
+        X=(char) (num^((int)Y<<16));
+
+        System.out.println("Обратно преобразуване: ");
+        System.out.println("Букви \'"+X+"\' и \'"+Y+"\'.");
+    }
+}
