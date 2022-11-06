@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class Demo
+{
+    public static void main(String[] args)
+    {
+        int a;
+        Scanner input=new Scanner(System.in);
+        System.out.print("Въведете цяло число: ");
+        a=input.nextInt();
+        
+        if(a==0)
+        {
+            System.out.println("Въведохте нула!");
+        }
+        else if(a==1)
+        {
+            System.out.println("Въведохте единица!");
+        }
+        else if(a%2==0)
+        {
+            System.out.println("Въведохте четно число!");
+        }
+        else
+        {
+            System.out.println("Въведохте нечетно число!");
+        }
+    }
+}
