@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class Demo
+{
+    public static void main(String[] args)
+    {
+        Scanner input=new Scanner(System.in);
+        String name, txt;
+        System.out.println("Въведете име: ");
+        name=input.nextLine();
+        
+        switch (name)
+        {
+            case "Гарфилд":
+                txt="Това е котаракът "+name+"!";
+                break;
+            case "Марти":
+                txt="Това е кучето "+name+"!";
+                break;
+            case "Иван":
+                txt="Това е чичо "+name+"!";
+                break;
+            default:
+                txt="Тове е неизвестен персонаж!";
+
+        }
+        System.out.println(txt);
+    }
+}
