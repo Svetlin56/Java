@@ -1,0 +1,61 @@
+import java.util.Scanner;
+class Demo
+{
+    public static void main(String[] args)
+    {
+        Scanner input=new Scanner(System.in);
+        double a,b,c;
+        double x1,x2,D;
+        
+        System.out.println("Параметри на уравнението:"); 
+        System.out.print("a=");
+        a= input.nextDouble();
+        System.out.print("b=");
+        b= input.nextDouble();
+        System.out.print("c=");
+        c= input.nextDouble();
+        
+        if(a==0)
+        {
+            System.out.println("Линейно уравнение!");
+            if (b != 0)
+            {
+                System.out.println("Решение x=" + (-c / b) + ".");
+            }
+            else
+            {
+                if (c == 0)
+                {
+                    System.out.println("Решение - всяко число.");
+                }
+                else
+                {
+                    System.out.println("Няма решение!");
+                }
+            }
+        }
+        else
+        {
+            System.out.println("Квадратно уравнение!");
+            D=b*b-4*a*c;
+            if(D<0)
+            {
+                System.out.println("Няма реални решения!");
+            }
+            else
+            {
+                if(D==0)
+                {
+                    System.out.println("Решение x="+(-b/2/a));
+                }
+                else
+                {
+                    x1=(-b-Math.sqrt(D))/2/a;
+                    x2=(-b+Math.sqrt(D))/2/a;
+                    System.out.println("Две решения: x="+x1+" и x="+x2+".");
+                }
+            }
+        }
+        System.out.println("Работата на програмата приключи.");
+    }
+}
