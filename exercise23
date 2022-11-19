@@ -1,0 +1,25 @@
+import static javax.swing.JOptionPane.*;
+import javax.swing.ImageIcon;
+
+class Demo
+{
+    public static void main(String[] args)
+    {
+        String path="C:/Users/svetl/OneDrive/Работен плот/animals/";
+        String[] names={"Лъв","Тигър","Мечка"};
+        String[] files={"lion.png","tiger.png","bear.png"};
+        String animal=(String)showInputDialog(null,"Кой хищник да ви покажем?", "Хищници",QUESTION_MESSAGE,null,names,names[0]);
+        
+        int index=0;
+        for(int k=1;k<names.length;k++)
+        {
+            if(animal.equals(names[k]))
+            {
+                index=k;
+                break;
+            }
+        }
+        ImageIcon img=new ImageIcon(path+files[index]);
+        showMessageDialog(null,img,animal,PLAIN_MESSAGE);
+    }
+}
