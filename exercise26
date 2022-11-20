@@ -1,0 +1,37 @@
+import static java.lang.Math.random;
+class Demo
+{
+    public static void main(String[] args)
+    {
+        int n=15,s;
+        int[] nums=new int[n];
+        System.out.println("Изходен масив:");
+        
+        for(int k=0;k<nums.length;k++)
+        {
+            nums[k]=(int)(5*n*random());
+            System.out.print(nums[k]+" ");
+        }
+        
+        for(int m=1;m<nums.length;m++)
+        {
+            for(int k=0;k<nums.length-m;k++)
+            {
+                if(nums[k]>nums[k+1])
+                {
+                    s=nums[k];
+                    nums[k]=nums[k+1];
+                    nums[k+1]=s;
+                }
+            }
+        }
+        System.out.println("\n Масивът след соптиране:");
+        
+        for(int k=0;k<nums.length;k++)
+        {
+            System.out.print(nums[k]+" ");
+        }
+        
+        System.out.println("");
+    }
+}
