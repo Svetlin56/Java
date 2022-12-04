@@ -1,0 +1,32 @@
+class MyClass
+{
+    String name;
+    int number;
+
+    void set(String txt,int num)
+    {
+        name=txt;
+        number=num;
+    }
+    void show()
+    {
+        System.out.println(name+": "+number);
+    }
+}
+
+
+class Demo
+{
+    public static void main(String[] args)
+    {
+        MyClass A=new MyClass();
+        MyClass B=new MyClass();
+        A.set("Обект А", 100);
+        B.name="Обект В";
+        B.number=200;
+        A.show();
+        B.show();
+        A.number=300;
+        A.show();
+    }
+}
