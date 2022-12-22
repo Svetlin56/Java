@@ -1,0 +1,36 @@
+import javax.swing.*;
+class MyCalcs
+{
+    static int number;
+    static String getCode()
+    {
+        String res="";
+        int n=number;
+        do
+        {
+            res=(n&1)+res;
+            n>>>=1;
+        }while (n>0);
+        return res;
+    }
+}
+
+class Demo
+{
+    static ImageIcon pict=new ImageIcon();
+    static String[] btns={"Напред","Затвори"};
+    static void show(String txt)
+    {
+        int res=JOptionPane.showOptionDialog(null, txt, "Съобщение", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, pict, btns, btns[0]);
+        if (res!=0) System.exit(0);
+    }
+    
+    public static void main(String[] args)
+    {
+        show("Добър ден! \n Да покажем ли бинарен код?");
+        MyCalcs.number=25;
+        String txt="Число: "+MyCalcs.number;
+        txt+="\n Бинарен код: "+MyCalcs.getCode();
+        show(txt);
+    }
+}
