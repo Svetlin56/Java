@@ -1,0 +1,26 @@
+class MyClass {
+    private int number;
+    private int reverse() {
+        int n=number;
+        int res=0;
+        do {
+            res=res*10+(n%10);
+            n/=10;
+        } while (n>0);
+        return res;
+        }
+        public void show() {
+            System.out.println("Изходно число: "+number);
+            System.out.println("Инверсия на числото: "+reverse());
+        }
+        public void set (int n) {
+            number=n;
+        }
+    }
+    class Demo {
+        public static void main(String[] args) {
+            MyClass obj=new MyClass();
+            obj.set(48163);
+            obj.show();
+        }
+    }
