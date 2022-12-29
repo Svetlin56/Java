@@ -1,0 +1,56 @@
+
+class MyClass
+{
+    private int first;
+    private int second;
+
+    void set(int a,int b)
+    {
+        first=a;
+        second=b;
+    }
+
+    void set(int n)
+    {
+        first=n;
+        second=n;
+    }
+
+    void set()
+    {
+        first = 100;
+        second = 200;
+    }
+    
+    void show()
+    {
+        System.out.println("Поле first: "+first);
+        System.out.println("Поле second: "+second);
+    }
+    
+    void show(boolean t)
+    {
+        if(t)
+        {
+            System.out.println("Поле first: "+first);
+        }else
+        {
+            System.out.println("Поле second: "+second);
+        }
+    }
+}
+
+class Demo
+{
+    public static void main(String[] args)
+    {
+        MyClass obj=new MyClass();
+        obj.set();
+        obj.show();
+        obj.set(111,222);
+        obj.show(false);
+        obj.show(true);
+        obj.set(123);
+        obj.show();
+    }
+}
