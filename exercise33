@@ -1,0 +1,50 @@
+class MyClass
+{
+    int number;
+    char symbol;
+    void show()
+    {
+        System.out.println("Число: "+number);
+        System.out.println("Символ: "+symbol);
+    }
+    
+    MyClass(int n,char s)
+    {
+        System.out.println("Създава се обект");
+        number=n;
+        symbol=s;
+    }
+    
+    MyClass()
+    {
+        this(100,'A');
+        System.out.println("Обектът е създаден");
+    }
+    
+    MyClass(int n)
+    {
+        this(n,'B');
+    }
+    
+    MyClass(char s)
+    {
+        System.out.println("Нов обект");
+        number=300;
+        symbol=s;
+    }
+}
+
+class Demo
+{
+    public static void main(String[] args)
+    {
+        MyClass A=new MyClass();
+        A.show();
+        MyClass B=new MyClass(200);
+        B.show();
+        MyClass C=new MyClass('C');
+        C.show();
+        MyClass D=new MyClass(400,'D');
+        D.show();
+    }
+}
