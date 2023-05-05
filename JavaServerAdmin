@@ -1,0 +1,19 @@
+public class Admin extends User
+{
+    public Admin(String userName, String password)
+    {
+        super(userName, password);
+    }
+
+ 
+    public UserType getUserType()
+    {
+        return UserType.ADMIN;
+    }
+
+   
+    public String toString()
+    {
+        return "Admin{} " + super.toString();
+    }
+}
