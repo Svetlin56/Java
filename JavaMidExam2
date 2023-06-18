@@ -1,0 +1,65 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        List<String> friends = new ArrayList<>();
+
+        String[] initialsFriends = scanner.nextLine().split(", ");
+        for (String friend : initialsFriends) {
+            friends.add(friend);
+        }
+
+        String word = scanner.nextLine();
+        int blacklistedCount = 0;
+        int lostCount = 0;
+
+        while (!word.equals("Report")) {
+            String[] text = word.split(" ");
+            String action = text[0];
+
+            switch (action) {
+                case "Blacklist":
+                    String nameToBlacklist = text[1];
+                    if (friends.contains(nameToBlacklist)) {
+                        friends.set(friends.indexOf(nameToBlacklist), "Blacklisted");
+                        System.out.println(nameToBlacklist + " was blacklisted.");
+                        blacklistedCount++;
+                    } else {
+                        System.out.println(nameToBlacklist + " was not found.");
+                    }
+                    break;
+
+                case "Error":
+                    int index = Integer.parseInt(text[1]);
+                    if (index >= 0 && index < friends.size()) {
+                        String name = friends.get(index);
+                        if (!name.equals("Blacklisted") && !name.equals("Lost")) {
+                            friends.set(index, "Lost");
+                            System.out.println(name + " was lost due to an error.");
+                            lostCount++;
+                        }
+                    }
+                    break;
+
+                case "Change":
+                    int changeIndex = Integer.parseInt(text[1]);
+                    if (changeIndex >= 0 && changeIndex < friends.size()) {
+                        String currentName = friends.get(changeIndex);
+                        String newName = text[2];
+                        friends.set(changeIndex, newName);
+                        System.out.println(currentName + " changed his username to " + newName + ".");
+                    }
+                    break;
+            }
+
+            word = scanner.nextLine();
+        }
+
+        System.out.println("Blacklisted names: " + blacklistedCount);
+        System.out.println("Lost names: " + lostCount);
+        System.out.println(String.join(" ", friends));
+    }
+}
