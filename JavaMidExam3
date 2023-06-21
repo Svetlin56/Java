@@ -1,0 +1,60 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        List<String> chat = new ArrayList<>();
+
+        String word = scanner.nextLine();
+
+        while (!word.equals("end")) {
+            String[] tokens = word.split("\\s+");
+            String action = tokens[0];
+
+            switch (action) {
+                case "Chat":
+                    String message = tokens[1];
+                    chat.add(message);
+                    break;
+
+                case "Delete":
+                    String delete = tokens[1];
+                    if (chat.contains(delete)) {
+                        chat.remove(delete);
+                    }
+                    break;
+
+                case "Edit":
+                    String edit = tokens[1];
+                    String editedVersion = tokens[2];
+                    if (chat.contains(edit)) {
+                        int index = chat.indexOf(edit);
+                        chat.set(index, editedVersion);
+                    }
+                    break;
+
+                case "Pin":
+                    String pin = tokens[1];
+                    if (chat.contains(pin)) {
+                        chat.remove(pin);
+                        chat.add(pin);
+                    }
+                    break;
+
+                case "Spam":
+                    for (int i = 1; i < tokens.length; i++) {
+                        chat.add(tokens[i]);
+                    }
+                    break;
+            }
+
+            word = scanner.nextLine();
+        }
+
+        for (String message : chat) {
+            System.out.println(message);
+        }
+    }
+}
