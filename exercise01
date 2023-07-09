@@ -1,9 +1,0 @@
-import static javax.swing.JOptionPane.
-showMessageDialog;
-class Demo
-{
-    public static void main(String[] args)
-    {
-        showMessageDialog(null, "Програмиране на Java!");
-    }
-}
